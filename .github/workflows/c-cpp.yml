@@ -14,7 +14,10 @@ jobs:
       run: sudo apt-get install -y g++
 
     - name: Build C++ code
-      run: g++ -o my_program main.cpp
+      run: |
+        g++ -o a.out a.cpp
+        g++ -o b.out b.cpp
+        # Добавьте команды для других файлов, если они есть
 
     - name: Run C++ tests
-      run: ./my_program --test
+      run: ./a.out --test
